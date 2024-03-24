@@ -8,7 +8,7 @@ const JobDetails = () => {
     console.log(id, jobs)
     const idInt = parseInt(id);
     const job = jobs.find(job => job.id === idInt);
-
+    console.log(job)
     const handleApplyJobs = () => {
         saveJobApplication(id)
     }
