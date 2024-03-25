@@ -15,6 +15,8 @@ const AppliedJobs = () => {
         if(filter === 'all'){
             setDisplayJobs(appliedJobs)
 
+            
+
         }
         else if(filter==='remote'){
             const remoteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Remote')
@@ -26,6 +28,17 @@ const AppliedJobs = () => {
             setDisplayJobs(onsiteJobs);
         }
     }
+
+    // Explain the useEffect below
+    // This function is used to display the jobs that have been applied for
+    // It takes in no parameter
+    // It gets the stored job ids from the local storage
+    // It checks if the jobs length is greater than 0
+    // It creates an empty array called jobsApplied
+    // It loops through the stored job ids
+    // It finds the job with the id from the jobs
+    // It pushes the job to the jobsApplied array
+    // It sets the applied jobs to the jobsApplied array
     useEffect(() => {
         const storedJobIds = getStoredJobApplication();
         if (jobs.length > 0) {
